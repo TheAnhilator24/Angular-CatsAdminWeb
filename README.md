@@ -1,3 +1,10 @@
+# Creating Single-Sign-On Angular Application - OAuth2 and OIDC (Open ID Connect)
+  npm install angular-oauth2-oidc
+
+https://developer.aliyun.com/mirror/npm/package/angular-6-social-login-temp
+
+
+
 # CatsControlApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
