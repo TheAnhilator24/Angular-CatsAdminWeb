@@ -1,10 +1,27 @@
-<div style="margin: 5em;">
-  <button (click)="signIn('Google');">Login</button>
+
+<!-- <div class="container mt-5">
+  <h2>Google Login</h2>
+  <div class="row mt-5">
+      <div class="col-md-4 mt-2 m-auto">
+            <button class="login-Btn" #loginRef>
+               Login with Google
+               <img class="social-btn-icon" alt="Login with Google" src="svg"> 
+            </button>``
+            <div *ngIf="show" >
+         `     <h4>{{Name}}</h4>
+            </div>
+          </div>
+  </div>
+</div> -->
+
+<!-- <div style="margin: 5em;">
+  <button (click)="signInWithGoogle();">Login</button>
   <button (click)="signOut();">Logout</button>
-</div>
-<div *ngIf="user" >
+</div> -->
+<!-- <div *ngIf="user" >
   <img src="{{user.photoUrl}}">
   <h4>{{user.name}}</h4>
   <h4>{{user.email}}</h4>
-</div>
+</div> -->
+
 <router-outlet></router-outlet>
