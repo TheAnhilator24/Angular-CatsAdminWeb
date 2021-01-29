@@ -8,7 +8,7 @@ import { SocialAuthService, SocialUser } from 'angularx-social-login';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  userLogged: SocialUser | null =null;
+  userLogged: SocialUser | {name: '', photoUrl: ''} = {name: '', photoUrl: ''};
   isLogged: boolean | false = false;
 
   constructor(private authService: SocialAuthService,
@@ -17,6 +17,7 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
     this.authService.authState.subscribe(
       data => {
+        console.log( 'MenuComponent: ' + data);
         this.userLogged = data;
         this.isLogged = (this.userLogged != null);
       }
@@ -24,8 +25,11 @@ export class MenuComponent implements OnInit {
   }
 
   signOut(): void {
-    this.authService.signOut();
-    this.router.navigate(['/login']);
+    this.authService.signOut().then(
+      data=> {
+        this.router.navigate(['/login']);
+      }
+    );
   }
 
 }

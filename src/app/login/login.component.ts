@@ -10,8 +10,8 @@ import { SocialAuthService, FacebookLoginProvider, GoogleLoginProvider, SocialUs
 })
 export class LoginComponent implements OnInit {
 
-  socialUser: SocialUser | null =null;
-  userLogged: SocialUser | null =null;
+  socialUser: SocialUser | {} = {name: '', photoUrl: ''};
+  userLogged: SocialUser | {} = {name: '', photoUrl: ''};
   isLogged: boolean | false = false;
 
   constructor(private authService: SocialAuthService,
@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.authService.authState.subscribe(
         data => {
+          console.log( 'LoginModule: ' + data);
           this.userLogged = data;
           this.isLogged = (this.userLogged != null);
         }
@@ -48,6 +49,10 @@ export class LoginComponent implements OnInit {
   }
 
   signOut(): void {
-    this.authService.signOut();
+    this.authService.signOut().then(
+      data=> {
+        this.router.navigate(['/login']);
+      }
+    );
   }
 }

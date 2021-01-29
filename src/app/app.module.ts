@@ -20,7 +20,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 // const google_oauth_client_id:string = "283244656754-tivjmjsd64snl9h5kkpj4a91m85l20gv.apps.googleusercontent.com"
-
+// app-fb:  246914590174842    secret-fb: 
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +47,10 @@ import {AppRoutingModule} from './app-routing.module';
               '283244656754-tivjmjsd64snl9h5kkpj4a91m85l20gv.apps.googleusercontent.com'
             )
           },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('246914590174842')
+          }          
         ]
       } as SocialAuthServiceConfig,
     }
